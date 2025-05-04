@@ -1,4 +1,4 @@
-package com.elfeky.weather_app.ui.theme
+package com.elfeky.weather_app.presentation.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
