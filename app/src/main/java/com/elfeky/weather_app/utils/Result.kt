@@ -1,4 +1,4 @@
-package com.elfeky.weather_app.common
+package com.elfeky.weather_app.utils
 
 sealed class Result<out T> {
     data class Success<out T>(val data: T) : Result<T>()

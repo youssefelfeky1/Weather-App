@@ -24,6 +24,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import com.elfeky.weather_app.presentation.navigation.AppNavigation
 import com.elfeky.weather_app.presentation.ui.common.WeatherGradientBackground
+import com.elfeky.weather_app.utils.LocationUtils
 
 class MainActivity : ComponentActivity() {
 

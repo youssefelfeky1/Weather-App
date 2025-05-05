@@ -2,7 +2,7 @@ package com.elfeky.weather_app.data.remote.mappers
 
 import com.elfeky.weather_app.domain.models.WeatherData
 import org.json.JSONObject
-import com.elfeky.weather_app.common.Result
+import com.elfeky.weather_app.utils.Result
 import com.elfeky.weather_app.domain.models.CurrentConditions
 import com.elfeky.weather_app.domain.models.DayForecast
 import com.elfeky.weather_app.domain.models.WeatherStation

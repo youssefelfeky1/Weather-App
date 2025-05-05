@@ -1,13 +1,13 @@
-package com.elfeky.weather_app.presentation
+package com.elfeky.weather_app.utils
 
-import android.content.Context
-import android.location.Location
-import android.location.LocationManager
-import androidx.core.content.ContextCompat
 import android.Manifest
+import android.content.Context
 import android.content.pm.PackageManager
+import android.location.Location
 import android.location.LocationListener
+import android.location.LocationManager
 import android.os.Looper
+import androidx.core.content.ContextCompat
 
 class LocationUtils(private val context: Context) {
     private val locationManager: LocationManager =

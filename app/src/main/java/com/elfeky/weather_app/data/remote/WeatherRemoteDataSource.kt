@@ -2,13 +2,13 @@ package com.elfeky.weather_app.data.remote
 
 import android.os.Handler
 import android.os.Looper
-import com.elfeky.weather_app.common.Constants.API_KEY
-import com.elfeky.weather_app.common.Constants.BASE_URL
+import com.elfeky.weather_app.utils.Constants.API_KEY
+import com.elfeky.weather_app.utils.Constants.BASE_URL
 import java.net.HttpURLConnection
 import java.net.URL
 import java.util.concurrent.ExecutorService
 import java.util.concurrent.Executors
-import com.elfeky.weather_app.common.Result
+import com.elfeky.weather_app.utils.Result
 import java.io.IOException
 import java.io.InputStream
 

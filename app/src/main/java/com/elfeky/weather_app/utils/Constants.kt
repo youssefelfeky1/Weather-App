@@ -1,4 +1,4 @@
-package com.elfeky.weather_app.common
+package com.elfeky.weather_app.utils
 
 object Constants {
     const val BASE_URL = "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/"
