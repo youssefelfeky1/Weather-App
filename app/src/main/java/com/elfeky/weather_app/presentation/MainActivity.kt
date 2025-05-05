@@ -13,12 +13,15 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.Text
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableDoubleStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import com.elfeky.weather_app.presentation.ui.theme.WeatherAppTheme
+import android.util.Log
+import androidx.compose.ui.platform.LocalContext
 
 class MainActivity : ComponentActivity() {
 
@@ -43,11 +46,25 @@ class MainActivity : ComponentActivity() {
             }
             WeatherAppTheme {
                 if (allGranted) {
+
+                    val longitude = remember { mutableDoubleStateOf(-1000.0) }
+                    val latitude = remember { mutableStateOf(-1000.0) }
+
+                    val context = LocalContext.current
+
+                    val locationUtils = remember { LocationUtils(context) }
+                    locationUtils.getCurrentLocation(onSuccess = {
+                        latitude.value = it.latitude
+                        longitude.value = it.longitude
+                    }, onError = {error->
+                        Log.d("LOCATION", "New location: $error")
+                    })
+
                     Box(
                         modifier = Modifier.fillMaxSize(),
                         contentAlignment = Alignment.Center
                     ) {
-                        Text("Location Permissions Granted")
+                        Text("Location Permissions Granted and location is ${latitude.value}, ${longitude.value}")
                     }
                 } else {
                     Box(
