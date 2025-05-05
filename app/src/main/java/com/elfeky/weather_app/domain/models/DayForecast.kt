@@ -5,6 +5,8 @@ data class DayForecast(
     val datetime: String,
     val datetimeEpoch: Long,
     val temp: Double,
+    val tempmin: Double,
+    val tempmax: Double,
     val feelslike: Double,
     val humidity: Double,
     val precip: Double,
@@ -18,5 +20,7 @@ data class DayForecast(
     val sunrise: String,
     val sunset: String,
     val preciptype: List<String>?,
-    val description: String
+    val description: String,
+    val uvindex: Double,
+    val visibility: Double
 )
