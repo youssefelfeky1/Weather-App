@@ -22,6 +22,7 @@ import androidx.compose.ui.Modifier
 import com.elfeky.weather_app.presentation.ui.theme.WeatherAppTheme
 import android.util.Log
 import androidx.compose.ui.platform.LocalContext
+import com.elfeky.weather_app.presentation.navigation.AppNavigation
 
 class MainActivity : ComponentActivity() {
 
@@ -59,13 +60,8 @@ class MainActivity : ComponentActivity() {
                     }, onError = {error->
                         Log.d("LOCATION", "New location: $error")
                     })
+                        AppNavigation()
 
-                    Box(
-                        modifier = Modifier.fillMaxSize(),
-                        contentAlignment = Alignment.Center
-                    ) {
-                        Text("Location Permissions Granted and location is ${latitude.value}, ${longitude.value}")
-                    }
                 } else {
                     Box(
                         modifier = Modifier.fillMaxSize(),
