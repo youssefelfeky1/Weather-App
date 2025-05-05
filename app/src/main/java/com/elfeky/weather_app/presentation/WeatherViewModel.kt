@@ -8,6 +8,9 @@ import androidx.lifecycle.ViewModel
 import com.elfeky.weather_app.data.remote.WeatherRemoteDataSource
 import com.elfeky.weather_app.data.repositories.WeatherRepositoryImpl
 import com.elfeky.weather_app.utils.Result
+import java.time.DayOfWeek
+import java.time.LocalDate
+import java.time.format.DateTimeFormatter
 
 
 class WeatherViewModel : ViewModel() {
@@ -42,6 +45,13 @@ class WeatherViewModel : ViewModel() {
             "drawable",
             context.packageName
         )
+    }
+
+    fun getDayOfWeek(dateString: String): String {
+        val formatter = DateTimeFormatter.ISO_DATE
+        val date: LocalDate = LocalDate.parse(dateString, formatter)
+        val dayOfWeek: DayOfWeek = date.dayOfWeek
+        return dayOfWeek.toString()
     }
 
 

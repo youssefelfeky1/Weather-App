@@ -22,8 +22,6 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.elfeky.weather_app.domain.models.DayForecast
 import com.elfeky.weather_app.presentation.WeatherViewModel
-import com.elfeky.weather_app.presentation.ui.theme.SemiTransparentWhite
-
 
 @Composable
 fun CurrentWeatherSection(
@@ -35,7 +33,7 @@ fun CurrentWeatherSection(
     Card(
         modifier = modifier,
         colors = CardDefaults.cardColors(
-            containerColor = SemiTransparentWhite
+            containerColor = Color.Transparent
         ),
     ) {
         Column(
