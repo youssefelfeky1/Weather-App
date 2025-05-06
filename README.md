@@ -23,8 +23,11 @@ A modern Android weather app built with Kotlin, Jetpack Compose, and Clean Archi
 - **Architecture**: Clean Architecture + MVVM
 - **API Client**: `HttpURLConnection`
 - **JSON Parsing**: `JSONObject`
-- **Location**: Android Location Manager
-
+- **Location**: Android Location
+- **Threading**:
+  - Executor for background operations
+  - Handler for main-thread communication
+  
 ## API Integration 🌐
 
 The app uses [Visual Crossing Weather API](https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/) with the following endpoints:
