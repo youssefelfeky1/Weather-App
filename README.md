@@ -23,7 +23,7 @@ A modern Android weather app built with Kotlin, Jetpack Compose, and Clean Archi
 - **Architecture**: Clean Architecture + MVVM
 - **API Client**: `HttpURLConnection`
 - **JSON Parsing**: `JSONObject`
-- **Location**: Android Location
+- **Location**: Android Location Manager
 - **Threading**:
   - Executor for background operations
   - Handler for main-thread communication
