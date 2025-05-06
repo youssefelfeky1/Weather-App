@@ -20,7 +20,7 @@ class WeatherViewModel : ViewModel() {
     var state by mutableStateOf(WeatherState())
         private set
 
-    fun getWeatherForecast(latitude: Double, longitude: Double) {
+    fun getWeatherForecast(latitude: Double, longitude: Double, onFinishRefresh: () -> Unit = { }) {
         repository.getWeatherForecast(latitude, longitude) { result ->
             when (result) {
                 is Result.Loading -> {
@@ -29,10 +29,12 @@ class WeatherViewModel : ViewModel() {
 
                 is Result.Success -> {
                     state = WeatherState(isLoadingLocation = false,isLoadingWeather = false, weatherForecast = result.data)
+                    onFinishRefresh()
                 }
 
                 is Result.Failure -> {
-                    state = WeatherState(error = result.exception.message)
+                    state = WeatherState(error = "Unable to reach server.",isLoadingLocation = false,isLoadingWeather = false)
+                    onFinishRefresh()
                 }
 
             }

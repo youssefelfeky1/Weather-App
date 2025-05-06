@@ -51,20 +51,24 @@ class MainActivity : ComponentActivity() {
                 if (allGranted) {
                     val viewModel = remember { WeatherViewModel() }
                     val longitude = rememberSaveable { mutableDoubleStateOf(-1000.0) }
-                    val latitude = rememberSaveable { mutableStateOf(-1000.0) }
+                    val latitude = rememberSaveable { mutableDoubleStateOf(-1000.0) }
 
                     val context = LocalContext.current
 
                     val locationUtils = remember { LocationUtils(context) }
                     locationUtils.getCurrentLocation(onSuccess = {
-                        latitude.value = it.latitude
-                        longitude.value = it.longitude
+                        latitude.doubleValue = it.latitude
+                        longitude.doubleValue = it.longitude
                         Log.d("LOCATION", "New location: $it.latitude, ${it.longitude}")
-                        viewModel.getWeatherForecast(latitude.value, longitude.value)
+                        viewModel.getWeatherForecast(latitude.doubleValue, longitude.doubleValue)
                     }, onError = {error->
                         Log.d("LOCATION", "New location: $error")
                     })
-                        AppNavigation(viewModel = viewModel)
+                        AppNavigation(
+                            viewModel = viewModel,
+                            longitude = longitude,
+                            latitude = latitude
+                        )
 
                 } else {
                     WeatherGradientBackground {

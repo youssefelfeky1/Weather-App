@@ -18,7 +18,7 @@ import com.elfeky.weather_app.presentation.ui.forecast_screen.components.Forecas
 @Composable
 fun ForecastScreen(
     modifier: Modifier = Modifier,
-    viewModel: WeatherViewModel
+    viewModel: WeatherViewModel,
 ) {
     WeatherGradientBackground {
         if (viewModel.state.isLoadingLocation) {
