@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
@@ -86,7 +87,7 @@ fun WeatherScreen(
                         )
                         Spacer(Modifier.height(16.dp))
                         WeatherDetailsSection(
-                            modifier = Modifier.width(320.dp),
+                            modifier = Modifier.fillMaxSize().padding(horizontal = 16.dp),
                             dayForecast = viewModel.state.weatherForecast!!.days[0],
                             navController = navController
                         )
@@ -98,7 +99,7 @@ fun WeatherScreen(
                     verticalAlignment = Alignment.CenterVertically,
                     horizontalArrangement = Arrangement.Center,
                     modifier = modifier
-                        .fillMaxSize()
+                        .fillMaxSize().padding(24.dp)
                         .verticalScroll(rememberScrollState())
                 ) {
                     if (viewModel.state.isLoadingLocation) {
@@ -115,7 +116,7 @@ fun WeatherScreen(
                         )
                         Spacer(Modifier.width(16.dp))
                         WeatherDetailsSection(
-                            modifier = Modifier.size(360.dp),
+                            modifier = Modifier.fillMaxSize().padding(16.dp),
                             dayForecast = viewModel.state.weatherForecast!!.days[0],
                             navController = navController
                         )
